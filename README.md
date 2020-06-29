@@ -1,5 +1,7 @@
 # Nuxt / Strapi / TailwindCSS Starter WebSite
 
+**Project is under development and requires a custom backend not yet available as repository**
+
 I decided to use Strapi as CMS framework in order to give me complete control about my content, possibility to edit and get immediate update without rebuilding when a new content has been added or even updated. 
 
 In my case I used a traditional mySQL database, but you can easily cheange your settings and choose mongoDB as well.
@@ -50,8 +52,25 @@ Since I decided to use NuxtJS and Strapi I created two apps, one for the backend
 
 ### Development 
 In order to start working on development of your website you need to install locally 
-- Strapi Backend
-- NuxtJS Frontend
+- Frontend (NuxtJS)
+- Backend (Strapi)
+
+#### Start the frontend server
+
+```bash
+# Using yarn
+yarn install
+yarn develop
+
+# Using npm
+npm install
+npm run develop
+```
+
+Nuxt server is running here => [http://localhost:3000](http://localhost:3000)
+
+Enjoy this starter
+
 
 #### Strapi Backend
 
@@ -97,18 +116,3 @@ Run develop
 
 
 
-#### Start the frontend server
-
-```bash
-# Using yarn
-yarn install
-yarn develop
-
-# Using npm
-npm install
-npm run develop
-```
-
-Nuxt server is running here => [http://localhost:3000](http://localhost:3000)
-
-Enjoy this starter
