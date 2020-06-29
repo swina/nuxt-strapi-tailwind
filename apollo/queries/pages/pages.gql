@@ -1,0 +1,10 @@
+query Pages {
+    pages {
+        id
+        title
+        excerpt
+        content
+        menu
+        slug
+    }
+}

@@ -1,0 +1,12 @@
+query Pages ($id :ID!){
+  page( id:$id ){
+    title
+    excerpt
+    content
+    featured { name }
+    SEO {
+        description
+        keywords
+    }
+  } 
+}

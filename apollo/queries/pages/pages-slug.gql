@@ -1,0 +1,13 @@
+query Pages ( $slug : String){
+  pages( where : { slug :$slug } ) {
+    title
+    excerpt
+    content
+    featured { name }
+    updated_at
+    SEO {
+        description
+        keywords
+    }
+  } 
+}

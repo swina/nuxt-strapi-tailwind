@@ -1,0 +1,16 @@
+query Articles ( $slug : String){
+  articles( where : { slug :$slug } ) {
+    title
+    excerpt
+    content
+    image { 
+        name 
+        url
+    }
+    updated_at
+    seo {
+        description
+        keywords
+    }
+  } 
+}

@@ -1,0 +1,13 @@
+query Setting {
+  setting {
+    site_name
+    site_title
+    show_title
+    logo_svg
+    logo_img { name },
+    email,
+    github,
+    twitter,
+    footer
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "antonio-nardone-webspecialist",
+  "version": "1.0.0",
+  "description": "A NuxtJS/Strapi/TailwindCSS blog",
+  "author": "You",
+  "private": true,
+  "scripts": {
+    "develop": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/apollo": "^4.0.0-rc17",
+    "@nuxtjs/markdownit": "^1.2.7",
+    "graphql": "^14.5.8",
+    "nuxt": "^2.0.0",
+    "nuxt-material-design-icons": "^1.0.4",
+    "uikit": "^3.2.3"
+  },
+  "devDependencies": {
+    "@babel/runtime-corejs3": "^7.9.6",
+    "@nuxtjs/tailwindcss": "^2.0.0",
+    "core-js": "^3.6.5"
+  },
+  "license": "MIT"
+}

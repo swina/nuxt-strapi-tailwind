@@ -1,0 +1,63 @@
+@tailwind base;
+
+/**
+ * This injects any component classes registered by plugins.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/components";
+ */
+@tailwind components;
+
+h1 {
+    @apply text-3xl font-bold text-blue-400 ;
+}
+
+h2 {
+    @apply text-2xl font-bold text-blue-400;
+}
+
+h3 {
+    @apply text-xl font-bold text-blue-400;
+}
+
+h4 {
+    @apply text-lg font-bold text-blue-400;
+}
+
+p {
+    @apply leading-9;
+}
+
+ul > li {
+    @apply list-disc ml-10;
+}
+
+nav > div > a {
+    @apply text-blue-600;
+}
+
+code {
+    @apply max-w-full bg-gray-300 overflow-auto p-2 m-2 rounded;
+}
+pre {
+    @apply max-w-full overflow-auto text-sm p-2 m-2 rounded bg-gray-300;
+}
+
+
+.site-title {
+    font-size:3rem;
+}
+
+.article-title {
+    @apply text-2xl font-bold;
+}
+
+.article-image-list  {
+    max-height:20rem;
+    height:20rem;
+    width:auto;
+}
+
+
+@tailwind utilities;
