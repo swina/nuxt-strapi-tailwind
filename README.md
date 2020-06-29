@@ -1,62 +1,101 @@
-# Strapi Starter Nuxt Blog
+# Nuxt / Strapi / TailwindCSS Starter WebSite
 
-Nuxt starter for creating a blog with Strapi.
+I decided to use Strapi as CMS framework in order to give me complete control about my content, possibility to edit and get immediate update without rebuilding when a new content has been added or even updated. 
 
-This starter allows you to try Strapi with Nuxt with the example of a simple blog. It is fully customizable and due to the fact that it is open source, fully open to contributions. Do not hesitate to add new features etc ...
+In my case I used a traditional mySQL database, but you can easily cheange your settings and choose mongoDB as well.
 
-You may want to know how to develop such a starter by your own! This starter is actually the result of this [tutorial](https://strapi.io/blog/build-a-blog-using-nuxt-strapi-and-apollo)
+## Features
+- custom content
+- pages and articles (posts)
+- use friendly url's (slug)
+- auto menu
+- tags
+- SEO 
+- media management 
+- random content images based on tags/title
 
-![screenshot image](/screenshot.png)
+## Content-Type Structure
 
-### Deploy the backend
+- Categories
+- Articles (Posts)
+- Pages
+- Tags
+- Users
 
-To deploy the Strapi instance you'll need:
+**Single Entities**
+- Settings
 
-- [An Heroku account](https://signup.heroku.com/) for free
-- [A Cloudinary account for saving images](https://cloudinary.com/users/register/free) for free
+I used a Single Entity Content Type in order to set general data that are used. Typical settings are:
 
-Once you have created these accounts you can deploy your instance by clicking on this button
+- site name
+- site title
+- logo
+- email
+- footer text (copyright and other info)
+- social links
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/strapi/strapi-starter-blog)
+You can also customize your settings adding colors, typography etc. in order to  render the output per your needs
 
-[Here](https://github.com/strapi/strapi-starter-blog) is the repository of the backend of this starter
 
-### Deploy the frontend
+**Components**
 
-**On Netflify**
+- Seo :   description, keywords
+ 
+This component is linked to Articles and Pages in order to add for each entry seo values that will be used to customize the head of each entry.
 
-Coming soon...
 
-**On Vercel**
+## Backend and Frontend
 
-Coming soon...
+Since I decided to use NuxtJS and Strapi I created two apps, one for the backend (Strapi) and for the frontend (NuxtJS)
 
-### Features
+### Development 
+In order to start working on development of your website you need to install locally 
+- Strapi Backend
+- NuxtJS Frontend
 
-- 2 Content types: Article, Category
-- 2 Created articles
-- 3 Created categories
-- Permissions set to `true` for article and category
-- Responsive design using UIkit
+#### Strapi Backend
 
-### Pages
+Clone the repository
 
-- "/" display every articles
-- "/article/:id" display one article
-- "/category/:id" display articles depending on the category
+``` git clone https://github.com/swina/swina-strapi-cms```
 
-### Getting started
 
-**Backend**
+Go to your installation folder (swina-strapi-cms)
 
-See full instructions [here](https://github.com/strapi/strapi-starter-blog)
+``` npm install```
 
-**Frontend**
 
-```bash
-git clone https://github.com/strapi/strapi-starter-nuxt-blog.git
-cd strapi-starter-nuxt-blog
+**Database Connection**
+In order to connect to a database (I am using mySQL, but you can change to PostGres or MongoDB) you need to change the following settings in **config/database.js**
+***Remember that you need that a database already exists***
+
+
 ```
+module.exports = ({ env }) => ({
+  defaultConnection: 'default',
+  connections: {
+    default: {
+      connector: 'bookshelf',
+      settings: {
+        client: 'mysql',
+        host: env('DATABASE_HOST', '127.0.0.1'),
+        port: env.int('DATABASE_PORT', 3306),
+        database: env('DATABASE_NAME', 'strapi-cms'),
+        username: env('DATABASE_USERNAME', 'root'),
+        password: env('DATABASE_PASSWORD', ''),
+        ssl: env.bool('DATABASE_SSL', false),
+      },
+      options: {}
+    },
+  },
+});
+```
+
+Run develop
+
+``` yarn develop```
+
+
 
 #### Start the frontend server
 
